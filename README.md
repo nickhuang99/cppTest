@@ -57,3 +57,9 @@ what I did is save them into a temp file and parse it by regex to generate the c
 
 
 That is it, don't forget to change the source file name in the code 
+
+
+What can you do with this demo or what is use of this work?
+depending how you want to find out during preprocessing, you check token type at "if (token->type != CPP_PADDING)", you can achieve a universal "callback" of libcpp alternative to official callback. This is trivial, but the purpose is to demo how to "programmatically" programming libcpp. The biggest part is to initialize those "built-in" and "system" directories and various pre-defined switches. 
+Writing a preprocessor is non-trivial job, compared with this setup, it is worth the efforts.
+also "cpp_spell_token" is relying on the "buffer" size is enough for a token, pay attention of extrememly long user-defined literal strings, or comments...
